@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Pilgrimage System</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #f4f6f9;
+    }
+
+    header {
+        background: #0d47a1;
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
+
+    nav {
+        background: #1565c0;
+        padding: 10px;
+        text-align: center;
+    }
+
+    nav a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    section {
+        padding: 40px;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .card {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .card h3 {
+        color: #0d47a1;
+    }
+
+    footer {
+        background: #0d47a1;
+        color: white;
+        text-align: center;
+        padding: 15px;
+    }
+
+    button {
+        padding: 10px;
+        background: #0d47a1;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Smart Pilgrimage System</h1>
+    <p>Koridor Wisata Religi Kota Pasuruan</p>
+</header>
+
+<nav>
+    <a href="#info">Smart Information</a>
+    <a href="#crowd">Crowd Management</a>
+    <a href="#umkm">UMKM</a>
+    <a href="#feedback">Feedback</a>
+</nav>
+
+<!-- SMART INFORMATION -->
+<section id="info">
+    <h2>📱 Smart Information</h2>
+    <div class="container">
+        <div class="card">
+            <h3>QR Sejarah & Audio Guide</h3>
+            <p>Scan QR untuk mendapatkan informasi sejarah dan audio guide lokasi wisata.</p>
+        </div>
+        <div class="card">
+            <h3>Digital Storytelling</h3>
+            <p>Cerita wisata religi dalam berbagai bahasa untuk wisatawan.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CROWD MANAGEMENT -->
+<section id="crowd">
+    <h2>📊 Smart Crowd Management</h2>
+    <div class="container">
+        <div class="card">
+            <h3>Monitoring Keramaian</h3>
+            <p>Status kepadatan pengunjung secara real-time.</p>
+            <button onclick="cekKepadatan()">Cek Sekarang</button>
+            <p id="status"></p>
+        </div>
+        <div class="card">
+            <h3>Jadwal Ziarah</h3>
+            <p>Informasi jadwal kegiatan dan event religi.</p>
+        </div>
+    </div>
+</section>
+
+<!-- UMKM -->
+<section id="umkm">
+    <h2>🛍️ Smart UMKM Integration</h2>
+    <div class="container">
+        <div class="card">
+            <h3>E-Katalog Pedagang</h3>
+            <p>Menampilkan produk lokal dari UMKM sekitar.</p>
+        </div>
+        <div class="card">
+            <h3>Pembayaran Digital</h3>
+            <p>Mendukung transaksi cashless untuk wisatawan.</p>
+        </div>
+    </div>
+</section>
+
+<!-- FEEDBACK -->
+<section id="feedback">
+    <h2>💬 Smart Feedback & Governance</h2>
+    <div class="container">
+        <div class="card">
+            <h3>Layanan Aspirasi</h3>
+            <textarea id="aspirasi" placeholder="Tulis aspirasi..." style="width:100%; height:80px;"></textarea>
+            <br><br>
+            <button onclick="kirimAspirasi()">Kirim</button>
+            <p id="respon"></p>
+        </div>
+        <div class="card">
+            <h3>Dashboard Pengelola</h3>
+            <p>Data pengelolaan wisata secara transparan.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Smart Pilgrimage System - Kota Pasuruan</p>
+</footer>
+
+<script>
+function cekKepadatan() {
+    let kondisi = ["Sepi", "Sedang", "Ramai"];
+    let random = kondisi[Math.floor(Math.random() * kondisi.length)];
+    document.getElementById("status").innerText = "Status: " + random;
+}
+
+function kirimAspirasi() {
+    let isi = document.getElementById("aspirasi").value;
+    if(isi === "") {
+        document.getElementById("respon").innerText = "Aspirasi tidak boleh kosong!";
+    } else {
+        document.getElementById("respon").innerText = "Aspirasi berhasil dikirim!";
+    }
+}
+</script>
+
+</body>
+</html>
